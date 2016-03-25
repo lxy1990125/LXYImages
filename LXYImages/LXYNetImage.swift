@@ -1,10 +1,11 @@
 //
 //  LXYNetImage.swift
-//  GDDRadioSwift
+//  LXYImages
 //
 //  Created by 李 欣耘 on 16/3/24.
 //  Copyright © 2016年 lixinyun. All rights reserved.
 //
+// This is load Image From net and add some Layer if you want
 
 import UIKit
 

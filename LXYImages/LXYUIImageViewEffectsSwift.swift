@@ -1,10 +1,11 @@
 //
 //  LXYUIImage+ImageEffectsSwift.swift
-//  GDDRadioSwift
+//  LXYImages
 //
 //  Created by 李 欣耘 on 16/3/18.
 //  Copyright © 2016年 lixinyun. All rights reserved.
 //
+// This is let image fuzzy processing 
 
 import UIKit
 import Accelerate

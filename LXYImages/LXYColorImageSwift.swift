@@ -1,10 +1,11 @@
 //
 //  LXYColorImageSwift.swift
-//  GDDRadioSwift
+//  LXYImages
 //
 //  Created by 李 欣耘 on 16/3/18.
 //  Copyright © 2016年 lixinyun. All rights reserved.
 //
+// This is make ImageView has multiple colors 
 
 import UIKit
 
