@@ -12,6 +12,17 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        var _image : UIImage = UIImage.init()
+        
+        _image = LXYNetImage.lxy_imageWithURL("xxxx.xxx", placeholderImage: "xx") { (image, respones, error) in
+            if image != nil {
+                _image = image!
+            }else {
+                
+            }
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 

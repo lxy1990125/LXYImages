@@ -5,7 +5,7 @@
 //  Created by 李 欣耘 on 16/3/24.
 //  Copyright © 2016年 lixinyun. All rights reserved.
 //
-// This is load Image From net and add some Layer if you want
+// This is load Image From net and add some Layer if you want and it is very easy
 
 import UIKit
 
@@ -13,10 +13,10 @@ internal let selfCachePath = NSSearchPathForDirectoriesInDomains(NSSearchPathDir
 
 internal
 
-class LXYNetImage: UIImageView,NSURLSessionDownloadDelegate {
+class LXYNetImage: NSObject,NSURLSessionDownloadDelegate {
     
-    internal func setImagesViewData(imageNetPath: String, placeholderImage: String?) {
-
+// simple Image
+    class func lxy_imageWithURL(imageNetPath: String, placeholderImage: String?, completionHandler: (UIImage?,NSURLResponse?, NSError?) -> Void) ->UIImage {
         let imageName : NSString = imageNetPath.componentsSeparatedByString("/")[imageNetPath.componentsSeparatedByString("/").count-1]
         
         let imageDataPath = (selfCachePath as String) + "/\(imageName)"
@@ -25,7 +25,7 @@ class LXYNetImage: UIImageView,NSURLSessionDownloadDelegate {
         
         
         if let cateReadData : NSData  = NSData(contentsOfURL: cateImagesUrl) {
-            self.image = self.addLayerOnImage(UIImage.init(data: cateReadData)!)
+            return UIImage.init(data: cateReadData)!
         }else{
             var returnImage : UIImage?
             
@@ -35,7 +35,7 @@ class LXYNetImage: UIImageView,NSURLSessionDownloadDelegate {
                 returnImage = UIImage.init(named: placeholderImage!)!
             }
             
-
+            
             let request : NSURLRequest = NSURLRequest.init(URL: NSURL.init(string: imageNetPath)!)
             
             
@@ -47,15 +47,15 @@ class LXYNetImage: UIImageView,NSURLSessionDownloadDelegate {
                 }else {
                     
                     let locationPath = location!.path
-                    //拷贝到用户目录
+                  
                     let cacheImage:String = (selfCachePath as String) + "/\(imageName)"
-                    //创建文件管理器
+                   
                     let fileManager:NSFileManager = NSFileManager.defaultManager()
                     try! fileManager.moveItemAtPath(locationPath!, toPath: cacheImage)
                     print("new location:\(cacheImage)")
                     
                     dispatch_sync(dispatch_get_main_queue(),{ () -> Void in
-                        self.image =  self.addLayerOnImage(UIImage.init(contentsOfFile: cacheImage)!)
+                        completionHandler(UIImage.init(contentsOfFile: cacheImage)!,response,error)
                     })
                     
                     
@@ -64,9 +64,10 @@ class LXYNetImage: UIImageView,NSURLSessionDownloadDelegate {
             
             task.resume()
             
-            self.image =  self.addLayerOnImage(returnImage)
+            return returnImage!
             
         }
+        
     }
     
 //MARK: addImage layer on -----
