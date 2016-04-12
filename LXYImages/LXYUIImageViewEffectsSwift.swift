@@ -10,23 +10,7 @@
 import UIKit
 import Accelerate
 
-class LXYUIImageViewEffectsSwift: UIImageView{
-    
-    class func shareInstance() ->LXYUIImageViewEffectsSwift! {
-        struct Private {
-            static var me : LXYUIImageViewEffectsSwift!
-        }
-        if  Private.me == nil {
-            Private.me = LXYUIImageViewEffectsSwift()
-        }
-        return Private.me
-    }
-    
-    var applySubtleEffect : UIImage {
-        let tintColor : UIColor = UIColor.init(white: 1.0, alpha: 0.3)
-        return self.applyBlurRadius(self.image!, blurRadius: 3, tintColor: tintColor, saturationDeltaFactor: 1.8, maskImage: nil)!
-    }
-    
+extension UIImage{
     
 //MARK: Image Bian Bian Bian
     func applyBlurRadius(inputImage: UIImage, blurRadius: CGFloat,tintColor: UIColor,saturationDeltaFactor: CGFloat,maskImage: UIImage?) -> UIImage?{

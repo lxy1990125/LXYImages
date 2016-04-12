@@ -78,7 +78,7 @@ class LXYNetImage: NSObject,NSURLSessionDownloadDelegate {
           return  LXYColorImageSwift.imageWithColor(UIColor.init(colorLiteralRed: 97/255.0, green: 151/255.0, blue: 182/255.0, alpha: 0.8))
 
         }else {
-          return  LXYUIImageViewEffectsSwift.shareInstance().applyBlurRadius(image!, blurRadius: 0, tintColor: UIColor.init(colorLiteralRed: 97/255.0, green: 151/255.0, blue: 182/255.0, alpha: 0.8), saturationDeltaFactor: 1.8, maskImage: nil)!
+          return  UIImage().applyBlurRadius(image!, blurRadius: 0, tintColor: UIColor.init(colorLiteralRed: 97/255.0, green: 151/255.0, blue: 182/255.0, alpha: 0.8), saturationDeltaFactor: 1.8, maskImage: nil)!
         }
     }
     

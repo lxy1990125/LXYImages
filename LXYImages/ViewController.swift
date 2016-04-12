@@ -16,6 +16,9 @@ class ViewController: UIViewController {
         
         var _image : UIImage = UIImage.init()
         
+      //  UIImage().applyBlurRadius(<#T##inputImage: UIImage##UIImage#>, blurRadius: <#T##CGFloat#>, tintColor: <#T##UIColor#>, saturationDeltaFactor: <#T##CGFloat#>, maskImage: <#T##UIImage?#>)
+        
+        
         _image = LXYNetImage.lxy_imageWithURL("xxxx.xxx", placeholderImage: "xx") { (image, respones, error) in
             if image != nil {
                 _image = image!
