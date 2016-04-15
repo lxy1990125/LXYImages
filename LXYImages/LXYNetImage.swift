@@ -5,7 +5,8 @@
 //  Created by 李 欣耘 on 16/3/24.
 //  Copyright © 2016年 lixinyun. All rights reserved.
 //
-// This is load Image From net and add some Layer if you want and it is very easy
+//  This is load Image From net and add some Layer if you want and it is very easy
+//  git remote add origin https://github.com/lxy1990125/LXYImages.git
 
 import UIKit
 

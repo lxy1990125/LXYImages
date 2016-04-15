@@ -5,7 +5,8 @@
 //  Created by 李 欣耘 on 16/3/18.
 //  Copyright © 2016年 lixinyun. All rights reserved.
 //
-// This is let image fuzzy processing 
+//  This is let image fuzzy processing 
+//  git remote add origin https://github.com/lxy1990125/LXYImages.git
 
 import UIKit
 import Accelerate
